@@ -112,7 +112,7 @@ public:
 
     bool AddEmployee(Employee* emp) {
         if (employeesWorkingOn >= 10) {
-            cout << "Project full — max 10 employees." << endl;
+            cout << "Project full â€” max 10 employees." << endl;
             return false;
         }
         for (int i = 0; i < employeesWorkingOn; i++) {
@@ -175,7 +175,7 @@ public:
 
     bool AddEmployee(Employee* emp) {
         if (employeeCount >= 50) {
-            cout << "Department full — max 50 employees." << endl;
+            cout << "Department full â€” max 50 employees." << endl;
             return false;
         }
         employee[employeeCount] = emp;
@@ -449,14 +449,14 @@ public:
         if (!e) { cout << "Employee not found." << endl; return false; }
         if (!p) { cout << "Project not found." << endl; return false; }
 
-        // bidirectional removal — both sides
+        // bidirectional removal â€” both sides
         bool r1 = p->RemoveEmployee(e);
         bool r2 = e->RemoveProject(idP);
         if (r1) p->DecEmployeeWorkingOn();
         return r1 && r2;
     }
 
-    // ---- destructor — cleans up all owned heap objects -------------------
+    // ---- destructor â€” cleans up all owned heap objects -------------------
     ~Company() {
         for (int i = 0; i < ecount; i++) { delete employees[i];   employees[i] = nullptr; }
         for (int i = 0; i < pcount; i++) { delete projects[i];    projects[i] = nullptr; }
